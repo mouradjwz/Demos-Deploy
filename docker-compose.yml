@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: springboot-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://oege.ie.hva.nl:3306/zdaoudim?useSSL=true&requireSSL=true&verifyServerCertificate=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: daoudim
+      SPRING_DATASOURCE_PASSWORD: ABb1P.tuyoRZ49ke
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+      SERVER_PORT: 8081
+      ELECTION_FRONTEND_URL: http://localhost
+    ports:
+      - "8081:8081"
+    networks:
+      - app-network
+    volumes:
+      - "./backend/src/main/resources/electiondata:/app/electiondata"
+
+  frontend:
+    build: ./frontend
+    container_name: vue-frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,97 @@
+/** box with black edges  **/
+.box {
+  border: 2px solid black; /* Black border */
+  padding: 10px; /* Padding inside the box */
+  background-color: white; /* White background */
+}
+
+.h1 {
+  font-size: 2em; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 10px; /* Space below the heading */
+}
+
+/* THESE ARE PARTY STYLES, SOURCE: https://en.wikipedia.org/wiki/Wikipedia_talk:Colors_of_political_parties_in_the_Netherlands
+/* Political Party Colors */
+.party-card[data-party="VVD"] {
+  background-color: #0066ee;
+  color: white;
+}
+
+.party-card[data-party="D66"] {
+  background-color: #00ffaa;
+  color: black;
+}
+
+.party-card[data-party="GROENLINKS / Partij van de Arbeid (PvdA)"] {
+  background-color: #44ff00;
+  color: black;
+}
+
+.party-card[data-party="PVV (Partij voor de Vrijheid)"] {
+  background-color: #bbbbbb;
+  color: black;
+}
+
+.party-card[data-party="CDA"] {
+  background-color: #ffff00;
+  color: black;
+}
+
+.party-card[data-party="SP (Socialistische Partij)"] {
+  background-color: #cc0000;
+  color: white;
+}
+
+.party-card[data-party="Partij voor de Dieren"] {
+  background-color: #44aa44;
+  color: white;
+}
+
+.party-card[data-party="ChristenUnie"] {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.party-card[data-party="Staatkundig Gereformeerde Partij (SGP)"] {
+  background-color: #eeaa00;
+  color: black;
+}
+
+
+/* Default styling for parties without specific colors */
+.party-card {
+  background-color: #f5f5f5;
+  color: black;
+  transition: transform 0.2s ease;
+}
+
+.party-card:hover {
+  transform: scale(1.02);
+}
+/* DIT IS ROOT HIER KAN JE ALLES DEFINEN WAT WE OP ELKE PAGINA GAAN GEBRUIKEN!!!*/
+:root {
+  --grey: #5f6b7a;
+  --bordercolor: 1px solid #ddd;
+  --rgb: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --font-family: system-ui, sans-serif;
+}
+
+.footer {
+  background-color: #154273;
+  color: white;
+  padding: 1rem 2rem;
+  font-family: system-ui, sans-serif;
+  margin-top: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.project-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* NOTE: Forum specific styles were removed from global CSS to avoid conflicting with the scoped styles in ForumView.vue.
+   The forum layout styles now live inside frontend/src/views/ForumView.vue (scoped) to preserve the exact visual layout. */

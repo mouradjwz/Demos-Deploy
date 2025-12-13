@@ -1,0 +1,17 @@
+variables:
+  DEPLOY_MKDOCS: "true"
+  DEPLOY_HIC: "false"
+
+default:
+  tags: [ hva ]
+  interruptible: true
+
+stages:
+  - build
+  - test
+  - deploy
+
+include:
+  - ".gitlab/workflows/build-docs.yml"
+  - ".gitlab/workflows/build-backend.yml"
+  - ".gitlab/workflows/build-frontend.yml"
