@@ -57,7 +57,6 @@ import type { PropType } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useAuthStore } from '../../stores/auth'
 import { computed } from 'vue'
-import { defineEmits } from 'vue'
 
 const emit = defineEmits<{ (e: 'deleted', id: number): void }>()
 
